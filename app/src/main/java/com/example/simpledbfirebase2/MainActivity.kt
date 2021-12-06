@@ -1,5 +1,6 @@
 package com.example.simpledbfirebase2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -44,5 +45,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Empty field", Toast.LENGTH_SHORT).show()
         }
     }
-    fun onClickRead(view: android.view.View) {}
+    fun onClickRead(view: android.view.View) {
+        val intent = Intent(this, ReadActivity::class.java)
+        startActivity(intent)
+    }
 }
