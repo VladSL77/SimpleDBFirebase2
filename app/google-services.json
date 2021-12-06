@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "651015776536",
+    "project_id": "simpledbfirebase2",
+    "storage_bucket": "simpledbfirebase2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651015776536:android:5e1a24f0794af60e8d166d",
+        "android_client_info": {
+          "package_name": "com.example.simpledbfirebase2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651015776536-a9rl0e0eel2hajm0vipaap7dg46d5ht2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo16hqJOOk8B4Bo6RzmWSgPH7QKKJBz1Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651015776536-a9rl0e0eel2hajm0vipaap7dg46d5ht2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
