@@ -13,17 +13,25 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editTextName: EditText
     private lateinit var editTextInfo: EditText
     private lateinit var myDB: DatabaseReference
+    private lateinit var myDBfaq: DatabaseReference
     private val userKey = "User"
+    private val faqKey = "FAQ"
     private lateinit var id: String
     private var name = ""
     private var info = ""
+    private lateinit var idFaq: String
+    private var question = ""
+    private var trueAns = ""
+    private var falseAns = ArrayList<String>()
     private var listOfDis = ArrayList<String>()
     private lateinit var newUser: User
+    private lateinit var newFaq: Faq
 
     private fun init() {
         editTextName = findViewById(R.id.editTextName)
         editTextInfo = findViewById(R.id.editTextInfo)
         myDB = FirebaseDatabase.getInstance().getReference(userKey)
+        myDBfaq = FirebaseDatabase.getInstance().getReference(faqKey)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickWrite(view: android.view.View) {
-
+        initQuestionDB()
         id = myDB.key.toString()
         name = editTextName.text.toString()
         info = editTextInfo.text.toString()
@@ -51,5 +59,15 @@ class MainActivity : AppCompatActivity() {
     fun onClickRead(view: android.view.View) {
         val intent = Intent(this, ReadActivity::class.java)
         startActivity(intent)
+    }
+    private fun initQuestionDB(){
+        idFaq = myDBfaq.key.toString()
+        question = "WTF?"
+        trueAns = "Its OK"
+        falseAns.add("I don`t know!")
+        falseAns.add("I don`t know!")
+        falseAns.add("I don`t know!")
+        newFaq = Faq(idFaq, question, trueAns, falseAns)
+        myDBfaq.push().setValue(newFaq)
     }
 }
