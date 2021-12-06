@@ -66,6 +66,7 @@ class ReadActivity : AppCompatActivity() {
                 intent = Intent(applicationContext, DetailActivity::class.java)
                 intent.putExtra(NAME, user.name)
                 intent.putExtra(INFO, user.info)
+                intent.putExtra(LIST_OF_DIS, user.listOfDis)
                 startActivity(intent)
             }
     }

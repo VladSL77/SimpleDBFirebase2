@@ -3,7 +3,6 @@ package com.example.simpledbfirebase2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
@@ -18,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var id: String
     private var name = ""
     private var info = ""
+    private var listOfDis = ArrayList<String>()
     private lateinit var newUser: User
 
     private fun init() {
@@ -37,7 +37,10 @@ class MainActivity : AppCompatActivity() {
         id = myDB.key.toString()
         name = editTextName.text.toString()
         info = editTextInfo.text.toString()
-        newUser = User(id,name, info)
+        listOfDis.add("Discipline1")
+        listOfDis.add("Discipline2")
+        listOfDis.add("Discipline3")
+        newUser = User(id,name, info, listOfDis)
         if (name != "" && info != "") {
             myDB.push().setValue(newUser)
             Toast.makeText(this, "Written", Toast.LENGTH_SHORT).show()
